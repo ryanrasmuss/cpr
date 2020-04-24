@@ -224,7 +224,10 @@ def main():
     # python3 cpr.py [discard]
     # python3 cpr.py [logout]
     # python3 cpr.py add-host name [name] [ipv4] 
-    # python3 cpr.py add-host -csv [filename]
+    # csv mode
+    # python3 cpr.py [command] -csv [filename.csv]
+    # python3 cpr.py add-host -csv [filename.csv]
+    # python3 cpr.py delete-host -csv deletehosts.csv
 
     if len(argv) == 1:
         help()
