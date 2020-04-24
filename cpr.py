@@ -198,6 +198,7 @@ def csv_mode(command, params, address, port, sid):
                     # name : example1
                     payload[headers[i]] = row[i]
                 line_count += 1
+                payload["ignore-warnings"] = "true"
                 # print(payload)
                 # make POST 
                 response = api_call(address, port, command, payload, sid)
@@ -260,9 +261,9 @@ def main():
         # make POST 
         response = api_call(address, port, command, payload, sid)
         # deal with response
-        handle_response(command, response)
-        # if logout, clear the session file
-        if command == 'logout':
+        resp_code = handle_response(command, response)
+        # if logout, clear the session file; only if we successfully logged out
+        if (command == 'logout') and ('200' == resp_code):
             session_fd = open(session_file, 'w')
             session_fd.truncate()
             session_fd.close()
