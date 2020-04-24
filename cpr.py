@@ -14,6 +14,7 @@ def help():
 
     print("\nUsage:  cpr.sh login [mgmt_ip_addr] [port#] [username]")
     print("\tcpr.sh [command] {parameters}")
+    print("\tcpr.sh [command] -csv [filename.csv]")
     print("\tcpr.sh publish")
     print("\tcpr.sh logout")
     print("\tcpr.sh help (for more details)\n")
@@ -28,7 +29,7 @@ def detailed_help():
     for key,val in subjects.items():
         print("\t" + val[0])
 
-    print("Run \"./cpr.sh [command]\" for a list of commands and parameters")
+    # print("Run \"./cpr.sh [command]\" for a list of commands and parameters")
 
 
 # Retrieve Session Information from file

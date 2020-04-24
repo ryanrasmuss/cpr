@@ -3,3 +3,4 @@ add login to file with creds
 add tool to parse content from output.txt to output.csv
 ./cpr.sh examples (for examples)
 install guide (linux/mac/windows) and docker
+./cpr.sh help [command] for command specific help
